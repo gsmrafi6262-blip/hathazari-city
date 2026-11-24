@@ -120,18 +120,67 @@ html{background:#f5f8fd}body{background:#f5f8fd!important;color:#172b4d!importan
 .tag{background:#edf4ff!important;color:#1765e8!important}
 .btn{background:#1765e8!important}.btn.alt{background:#edf4ff!important;color:#1765e8!important}.btn.line{color:#1765e8!important;border-color:#cbdcf8!important}
 @media(max-width:380px){.wrap{padding-left:12px!important;padding-right:12px!important}.hc-green-head{margin-left:-12px!important;margin-right:-12px!important;padding-left:12px!important;padding-right:12px!important}.hc-service-grid{gap:8px!important}.hc-service{height:98px!important;min-height:98px!important}.hc-service-icon{width:41px!important;height:41px!important}.hc-weather-meta{font-size:10px!important}}
+
+/* Actual home screen rebuild based on approved blue-white mockup */
+body{background:#f5f8ff!important;color:#142b52!important;padding-bottom:82px!important}
+.wrap{max-width:850px!important;padding:0 16px 28px!important}
+.hc-premium-hero{position:relative;overflow:hidden;margin:0 -16px 0;padding:13px 18px 20px;min-height:285px;border-radius:0 0 27px 27px;background:linear-gradient(145deg,#082f83 0%,#0874df 58%,#48c1f3 100%);color:white;isolation:isolate}
+.hc-premium-hero:before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 78% 78%,#c9edff55 0,transparent 38%),linear-gradient(130deg,transparent 46%,#ffffff10 46.2%,transparent 67%)}
+.hc-statusline{display:flex;justify-content:space-between;font:600 10px Inter,sans-serif;color:#dcecff;opacity:.9}
+.hc-premium-brand{display:flex;align-items:center;gap:11px;margin-top:15px;position:relative;z-index:2}
+.hc-premium-logo{width:58px;height:58px;border-radius:19px;background:#fff;color:#1260c9;display:grid;place-items:center;font-size:37px;box-shadow:0 6px 18px #001e5740}
+.hc-premium-brand b{font:800 19px/1.05 Inter,sans-serif;letter-spacing:-.5px}.hc-premium-brand small{display:block;margin-top:5px;font-size:11px;color:#e0f2ff}
+.hc-premium-actions{margin-left:auto;display:flex;gap:8px}.hc-premium-actions button{position:relative;width:39px;height:39px;border-radius:50%;background:#ffffff27;color:white;font-size:21px;border:1px solid #ffffff35}.hc-premium-actions i{position:absolute;right:-3px;top:-5px;background:#f04444;color:#fff;font:700 9px Inter;border-radius:50%;padding:4px;font-style:normal}
+.hc-hill-art{position:absolute;z-index:-1;left:0;right:0;bottom:0;height:120px;overflow:hidden;background:linear-gradient(180deg,transparent,#063a8a55)}
+.hc-sun{position:absolute;right:19%;top:0;width:44px;height:44px;border-radius:50%;background:#ffe99b;box-shadow:0 0 45px #ffe99b88}
+.hc-hill{position:absolute;bottom:-30px;width:75%;height:125px;border-radius:55% 55% 0 0;transform:rotate(-7deg)}
+.hill-one{left:-5%;background:linear-gradient(150deg,#4fba82,#08735b)}
+.hill-two{right:-15%;bottom:-45px;background:linear-gradient(150deg,#80d29b,#116b67);transform:rotate(9deg)}
+.hc-river{position:absolute;bottom:0;left:37%;width:30%;height:46px;background:linear-gradient(170deg,#91e6ff,#1686d9);clip-path:polygon(0 0,100% 30%,70% 100%,20% 100%)}
+.hc-premium-location{position:relative;z-index:3;margin:17px 0 0!important;height:44px!important;border-radius:13px!important;background:#fff!important;color:#1765d9!important;box-shadow:0 7px 20px #062b6540!important;padding:0 13px!important}
+.hc-premium-location select{color:#203b65!important;font-weight:600}
+.hc-premium-weather{display:flex;position:relative;overflow:hidden;margin:14px 0 0;padding:16px 17px;min-height:142px;border-radius:19px;background:linear-gradient(110deg,#087ee8,#42b9f5);color:#fff;box-shadow:0 8px 20px #1765e825}
+.hc-weather-copy{position:relative;z-index:2}.hc-weather-copy>small{font-size:12px;color:#e5f6ff}.hc-temp{display:flex;align-items:center;gap:10px;margin:5px 0}.hc-temp strong{font:800 36px Inter,sans-serif}.hc-weather-copy>b{font-size:13px}.hc-weather-copy p{font:11px Inter,sans-serif;color:#e7f6ff;margin:8px 0 0}
+.hc-weather-scene{position:absolute;right:0;bottom:0;width:43%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#bdeaff66,#ffffff10);clip-path:polygon(18% 0,100% 0,100% 100%,0 100%)}
+.hc-weather-scene>span{position:absolute;top:10px;right:25px;font-size:35px;opacity:.8}.hc-weather-tower{margin-top:28px;width:47px;height:83px;background:linear-gradient(90deg,#eaf7ff,#fff 45%,#9ed4f8);clip-path:polygon(40% 0,60% 0,68% 22%,76% 22%,83% 100%,17% 100%,24% 22%,32% 22%);display:grid;place-items:center;color:#1765ba;font-weight:800;padding-top:25px}
+.hc-premium-section{margin:24px 1px 13px!important}.hc-premium-section h2{font-size:21px!important;color:#122d59!important}.hc-premium-section button{display:block!important;color:#1765d9!important}
+.hc-service-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:9px!important}
+.hc-service{height:100px!important;min-height:100px!important;border:1px solid #e3ebf8!important;border-radius:16px!important;background:#fff!important;box-shadow:0 4px 13px #153d7910!important;gap:7px!important;padding:9px 3px!important}
+.hc-service-icon{width:45px!important;height:45px!important;border-radius:14px!important;font-size:24px!important;box-shadow:inset 0 0 0 1px #dbeaff}
+.hc-service strong{font-size:11px!important;line-height:1.2!important;color:#1b3154!important;font-weight:600!important}
+.hc-popular-cards{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:11px!important}
+.hc-popular-cards .place{padding:13px!important;border-radius:16px!important;background:#fff!important;border:1px solid #e3ebf8!important;box-shadow:0 5px 15px #153d7910!important;min-width:0}
+.hc-popular-cards .place h3{font-size:15px!important;color:#18345e!important}.hc-popular-cards .place p{font-size:11px!important}
+.hc-premium-business{display:flex;align-items:center;gap:10px;margin:20px 0 8px;padding:14px;border-radius:17px;border:1px solid #cfe2ff;background:linear-gradient(105deg,#e4f1ff,#f7fbff)}
+.hc-shop-art{width:48px;height:48px;display:grid;place-items:center;background:#fff;border-radius:13px;font-size:28px;flex-shrink:0}
+.hc-premium-business div:nth-child(2){flex:1;min-width:0}.hc-premium-business b,.hc-premium-business small{display:block}.hc-premium-business b{font-size:13px;color:#173765}.hc-premium-business small{font-size:10px;color:#7184a1;margin-top:3px}
+.hc-premium-business button{background:#1765df;color:white;border-radius:10px;padding:10px 11px;font-size:11px;font-weight:700;white-space:nowrap}
+.hc-bottom-nav{height:70px!important;padding:6px 5px max(7px,env(safe-area-inset-bottom))!important;background:#fff!important;border-top:1px solid #e4ebf7!important;box-shadow:0 -5px 20px #173b7110!important}
+.hc-bottom-nav button{color:#8290a8!important}.hc-bottom-nav button.active{color:#1765df!important}.hc-bottom-nav button.active span{background:#edf4ff!important;color:#1765df!important;outline:0!important}
+@media(max-width:390px){.hc-premium-hero{padding-left:13px;padding-right:13px}.hc-premium-brand b{font-size:17px}.hc-premium-logo{width:51px;height:51px}.hc-service-grid{gap:7px!important}.hc-service{height:94px!important;min-height:94px!important}.hc-service-icon{width:41px!important;height:41px!important}.hc-service strong{font-size:10px!important}.hc-weather-copy p{font-size:9px}.hc-premium-business{padding:11px 9px}.hc-premium-business b{font-size:11px}.hc-premium-business button{font-size:10px;padding:9px 8px}}
 </style></head><body><div class="splash" id="splash"><div class="splash-inner"><div class="splash-logo">হ</div><h1>হাটহাজারী সিটি গাইড</h1><p>HATHAZARI CITY GUIDE</p><div class="loader"></div></div></div>
 <header class="top"><nav class="nav"><div class="brand" onclick="go('home')"><span class="logo">হ</span><span>হাটহাজারী সিটি গাইড<small style="display:block;font:10px Inter;color:#8090a8">HATHAZARI CITY GUIDE</small></span></div><div class="navlinks"><button onclick="go('home')">হোম</button><button onclick="go('categories')">ক্যাটাগরি</button><button onclick="go('search')">সার্চ</button><button onclick="go('favorites')">পছন্দের তালিকা</button><button onclick="go('notifications')">নোটিফিকেশন</button><button onclick="go('about')">আমাদের সম্পর্কে</button></div><button class="btn alt" onclick="toggleLang()" id="langBtn">English</button><button class="btn" onclick="go('favorites')">♡ পছন্দ</button><button class="btn" onclick="go('profile')">প্রোফাইল</button></nav></header>
 <main class="wrap">
 <section id="home" class="page active">
-<div class="hc-green-head">
-<div class="hc-top"><div class="hc-brand"><span class="hc-logo">হ</span><span><b>হাটহাজারী সিটি</b><small>বাংলাদেশের ৪৯৫ উপজেলা</small></span></div><div class="hc-top-actions"><button onclick="go('notifications')" aria-label="নোটিফিকেশন">♧</button><button onclick="go('profile')" aria-label="মেনু">⋮</button></div></div>
-<div class="hc-location"><span>⌖</span><select aria-label="এলাকা নির্বাচন"><option>হাটহাজারী, চট্টগ্রাম</option><option>হাটহাজারী সদর</option><option>নাজিরহাট</option><option>ফতেপুর</option><option>মির্জাপুর</option></select><span>⌄</span></div>
-<div class="hc-weather"><div class="hc-weather-top"><small>আবহাওয়া</small><span>☀</span></div><div class="hc-weather-main"><span class="hc-cloud">☁</span><div><strong>৩২°C</strong><small>আংশিক মেঘলা</small></div></div><div class="hc-weather-meta"><span>♨ আর্দ্রতা ৭৮%</span><span>≋ ১২ km/h</span><span>☀ UV ৩৬°</span></div></div>
+<div class="hc-premium-hero">
+ <div class="hc-statusline"><span>হাটহাজারী, চট্টগ্রাম</span><span>● ● ●</span></div>
+ <div class="hc-premium-brand">
+  <div class="hc-premium-logo">⌖</div>
+  <div><b>Hathazari<br>City Guide</b><small>আমার হাটহাজারী, আমার গর্ব</small></div>
+  <div class="hc-premium-actions"><button onclick="go('notifications')" aria-label="নোটিফিকেশন">♧<i>3</i></button><button onclick="go('profile')" aria-label="মেনু">☰</button></div>
+ </div>
+ <div class="hc-hill-art" aria-hidden="true"><span class="hc-sun"></span><span class="hc-hill hill-one"></span><span class="hc-hill hill-two"></span><span class="hc-river"></span></div>
+ <div class="hc-location hc-premium-location"><span>📍</span><select aria-label="এলাকা নির্বাচন"><option>হাটহাজারী, চট্টগ্রাম</option><option>হাটহাজারী সদর</option><option>নাজিরহাট</option><option>ফতেপুর</option><option>মির্জাপুর</option></select><span>⌄</span></div>
 </div>
-<div class="hc-section-head"><h2>সেবা সমূহ</h2><button onclick="go('categories')">সব দেখুন ›</button></div><div class="hc-service-grid" id="homeCats"></div>
-<div class="hc-section-head hc-feature-head"><h2>জনপ্রিয় স্থান</h2><button onclick="go('search')">সব দেখুন ›</button></div><div class="cards" id="featuredPlaces"></div>
-<div class="hc-business-cta"><div><b>আপনার প্রতিষ্ঠান যুক্ত করুন</b><small>হাটহাজারীর মানুষের কাছে পৌঁছে যান</small></div><button onclick="go('register')">নিবন্ধন করুন</button></div>
+<div class="hc-premium-weather">
+ <div class="hc-weather-copy"><small>আজকের আবহাওয়া</small><div class="hc-temp">☀️ <strong>৩২°C</strong></div><b>আংশিক মেঘলা</b><p>আর্দ্রতা ৭৮%　•　বাতাস ১২ km/h</p></div>
+ <div class="hc-weather-scene"><span>☁️</span><div class="hc-weather-tower">হ</div></div>
+</div>
+<div class="hc-section-head hc-premium-section"><h2>সেবাসমূহ</h2><button onclick="go('categories')">সব দেখুন →</button></div>
+<div class="hc-service-grid" id="homeCats"></div>
+<div class="hc-section-head hc-premium-section hc-feature-head"><h2>জনপ্রিয় স্থানসমূহ</h2><button onclick="go('search')">আরও দেখুন →</button></div>
+<div class="cards hc-popular-cards" id="featuredPlaces"></div>
+<div class="hc-premium-business"><div class="hc-shop-art">🏪</div><div><b>আপনার প্রতিষ্ঠান যুক্ত করুন</b><small>হাটহাজারীর মানুষের কাছে পৌঁছে যান</small></div><button onclick="go('register')">রেজিস্ট্রেশন →</button></div>
 </section><section id="categories" class="page"><div class="head"><h2>সকল ক্যাটাগরি</h2></div><div class="grid" id="allCats"></div></section>
 <section id="search" class="page"><div class="head"><h2>প্রতিষ্ঠান ও স্থান খুঁজুন</h2></div><div class="panel"><div class="formgrid"><div class="field"><label>নাম বা কীওয়ার্ড</label><input id="searchTerm" placeholder="প্রতিষ্ঠানের নাম লিখুন" oninput="renderDirectory()"></div><div class="field"><label>ক্যাটাগরি</label><select id="filterCategory" onchange="renderDirectory()"><option value="">সব ক্যাটাগরি</option></select></div></div></div><div class="cards section" id="directory"></div></section>
 <section id="categoryDetail" class="page"><div class="head"><div><button class="btn alt sm" onclick="go('categories')">← ক্যাটাগরি</button><h2 id="categoryTitle" style="margin-top:12px"></h2></div></div><div class="cards" id="categoryPlaces"></div></section>
