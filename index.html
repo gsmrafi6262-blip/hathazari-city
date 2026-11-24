@@ -90,6 +90,36 @@ body{background:#f5f9f6!important;color:#111!important;padding-bottom:66px!impor
 .hc-bottom-nav button:nth-child(4) span{color:#a36bea}
 .hc-bottom-nav button:nth-child(5) span{color:#55a9e9}
 @media(max-width:380px){.hc-service-grid{gap:9px!important}.hc-service{height:81px!important;min-height:81px!important}.hc-weather-meta{font-size:10px!important}}
+
+/* Premium blue-white redesign: replace the previous green home styling */
+:root{--hc-green:#1765e8;--hc-deep:#123b82;--blue:#1765e8;--navy:#102b55;--pale:#edf4ff;--ink:#172b4d;--line:#e3ebf7;--muted:#70809a;--shadow:0 8px 24px rgba(25,65,130,.07)}
+html{background:#f5f8fd}body{background:#f5f8fd!important;color:#172b4d!important;font-family:'Hind Siliguri',Inter,sans-serif!important;padding-bottom:76px!important}
+.wrap{max-width:780px!important;padding:0 16px 28px!important}
+.hc-green-head{background:linear-gradient(125deg,#123b82 0%,#1765e8 65%,#4c91ff 100%)!important;margin:0 -16px!important;padding:17px 16px 20px!important;border-radius:0 0 25px 25px!important;box-shadow:0 12px 28px rgba(23,101,232,.16)}
+.hc-top{padding:2px 1px 17px!important;min-height:48px}
+.hc-logo{width:43px!important;height:43px!important;border-radius:14px!important;background:rgba(255,255,255,.16)!important;border:1px solid rgba(255,255,255,.3)!important;color:#fff!important;font-size:23px!important}
+.hc-brand b{font:700 17px 'Hind Siliguri',sans-serif!important;color:#fff!important;letter-spacing:.1px}
+.hc-brand small{font-size:11px!important;color:#dce9ff!important;letter-spacing:.25px}
+.hc-top-actions{gap:9px!important}.hc-top-actions button{width:39px!important;height:39px!important;border-radius:13px!important;background:rgba(255,255,255,.16)!important;border:1px solid rgba(255,255,255,.17)!important;color:#fff!important;font-size:20px!important}
+.hc-location{height:45px!important;margin:0!important;padding:0 14px!important;border-radius:13px!important;background:#fff!important;color:#1765e8!important;box-shadow:0 5px 16px rgba(8,34,83,.12)!important}
+.hc-location select{font-size:13px!important;color:#536782!important}
+.hc-weather{margin:15px 0 0!important;min-height:140px!important;border-radius:18px!important;background:linear-gradient(115deg,#fff 0%,#edf4ff 100%)!important;color:#173765!important;padding:15px 17px!important;border:1px solid #dce8fb!important;box-shadow:none!important}
+.hc-weather-top small,.hc-weather-main small{color:#637895!important}.hc-weather-top span{color:#1765e8!important;opacity:.16!important}
+.hc-weather-main{margin:2px 0 10px!important;gap:13px!important}.hc-cloud{font-size:39px!important}.hc-weather-main strong{font:800 34px Inter,sans-serif!important;color:#123b82!important}.hc-weather-meta{color:#526987!important;font-size:11px!important}
+.hc-section-head{margin:23px 1px 13px!important}.hc-section-head h2{font-size:21px!important;color:#142c52!important;font-weight:700!important}.hc-section-head button{display:block!important;color:#1765e8!important;font-weight:700!important}
+.hc-service-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:11px!important}
+.hc-service{height:105px!important;min-height:105px!important;border:1px solid #e3ebf7!important;border-radius:16px!important;background:#fff!important;box-shadow:0 5px 16px rgba(21,57,112,.055)!important;gap:8px!important;padding:10px 4px!important;color:#172b4d!important;transition:transform .18s,box-shadow .18s!important}
+.hc-service:active{transform:scale(.97)!important}.hc-service-icon{width:45px!important;height:45px!important;border-radius:14px!important;font-size:23px!important;background:#edf4ff!important}
+.hc-service strong{font-size:11px!important;line-height:1.2!important;color:#253c60!important;font-weight:600!important}
+.hc-feature-head{margin-top:27px!important}.cards{gap:12px!important}.place,.panel{border:1px solid #e3ebf7!important;border-radius:16px!important;box-shadow:0 6px 20px rgba(21,57,112,.055)!important}
+.hc-business-cta{margin-top:20px!important;border-radius:17px!important;padding:17px!important;background:linear-gradient(110deg,#eaf2ff,#f7faff)!important;border:1px solid #dce8fb!important}
+.hc-business-cta b{color:#173765!important}.hc-business-cta small{color:#6c7f9b!important}.hc-business-cta button{background:#1765e8!important;color:#fff!important;border-radius:11px!important;padding:10px 14px!important}
+.hc-bottom-nav{height:68px!important;padding:7px 6px max(7px,env(safe-area-inset-bottom))!important;background:rgba(255,255,255,.97)!important;border-top:1px solid #e3ebf7!important;box-shadow:0 -6px 22px rgba(20,52,102,.07)!important;backdrop-filter:blur(12px)}
+.hc-bottom-nav button{color:#8492a8!important;font-size:10px!important;gap:2px!important}.hc-bottom-nav button span{width:33px!important;height:33px!important;font-size:19px!important;border-radius:11px!important}
+.hc-bottom-nav button.active{color:#1765e8!important;font-weight:700!important}.hc-bottom-nav button.active span{outline:0!important;background:#edf4ff!important;color:#1765e8!important}
+.tag{background:#edf4ff!important;color:#1765e8!important}
+.btn{background:#1765e8!important}.btn.alt{background:#edf4ff!important;color:#1765e8!important}.btn.line{color:#1765e8!important;border-color:#cbdcf8!important}
+@media(max-width:380px){.wrap{padding-left:12px!important;padding-right:12px!important}.hc-green-head{margin-left:-12px!important;margin-right:-12px!important;padding-left:12px!important;padding-right:12px!important}.hc-service-grid{gap:8px!important}.hc-service{height:98px!important;min-height:98px!important}.hc-service-icon{width:41px!important;height:41px!important}.hc-weather-meta{font-size:10px!important}}
 </style></head><body><div class="splash" id="splash"><div class="splash-inner"><div class="splash-logo">হ</div><h1>হাটহাজারী সিটি গাইড</h1><p>HATHAZARI CITY GUIDE</p><div class="loader"></div></div></div>
 <header class="top"><nav class="nav"><div class="brand" onclick="go('home')"><span class="logo">হ</span><span>হাটহাজারী সিটি গাইড<small style="display:block;font:10px Inter;color:#8090a8">HATHAZARI CITY GUIDE</small></span></div><div class="navlinks"><button onclick="go('home')">হোম</button><button onclick="go('categories')">ক্যাটাগরি</button><button onclick="go('search')">সার্চ</button><button onclick="go('favorites')">পছন্দের তালিকা</button><button onclick="go('notifications')">নোটিফিকেশন</button><button onclick="go('about')">আমাদের সম্পর্কে</button></div><button class="btn alt" onclick="toggleLang()" id="langBtn">English</button><button class="btn" onclick="go('favorites')">♡ পছন্দ</button><button class="btn" onclick="go('profile')">প্রোফাইল</button></nav></header>
 <main class="wrap">
