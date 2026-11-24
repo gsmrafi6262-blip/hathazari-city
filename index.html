@@ -181,7 +181,16 @@ body{background:#f5f8ff!important;color:#142b52!important;padding-bottom:82px!im
  <div class="hc-premium-brand">
   <div class="hc-premium-logo">⌖</div>
   <div><b>Hathazari<br>City Guide</b><small>আমার হাটহাজারী, আমার গর্ব</small></div>
-  <div class="hc-premium-actions"><button onclick="go('notifications')" aria-label="নোটিফিকেশন">♧<i>3</i></button><button onclick="go('profile')" aria-label="মেনু">☰</button></div>
+  <div class="hc-premium-actions">
+   <button onclick="go('notifications')" aria-label="নোটিফিকেশন" title="নোটিফিকেশন">🔔<i>3</i></button>
+   <div class="hc-menu-wrap"><button onclick="toggleAppMenu()" aria-label="অ্যাপ মেনু" title="আরও অপশন">⋮</button>
+    <div class="hc-app-menu" id="hcAppMenu">
+     <button onclick="openAppInfo()">ℹ️ <span>অ্যাপ সম্পর্কে</span></button>
+     <button onclick="openDeveloperInfo()">👨‍💻 <span>ডেভেলপার তথ্য</span></button>
+     <button onclick="shareApp()">↗️ <span>অ্যাপ শেয়ার করুন</span></button>
+    </div>
+   </div>
+  </div>
  </div>
  <div class="hc-hill-art" aria-hidden="true"><span class="hc-sun"></span><span class="hc-hill hill-one"></span><span class="hc-hill hill-two"></span><span class="hc-river"></span></div>
  <div class="hc-location hc-premium-location"><span>📍</span><select aria-label="এলাকা নির্বাচন"><option>হাটহাজারী, চট্টগ্রাম</option><option>হাটহাজারী সদর</option><option>নাজিরহাট</option><option>ফতেপুর</option><option>মির্জাপুর</option></select><span>⌄</span></div>
@@ -208,6 +217,8 @@ body{background:#f5f8ff!important;color:#142b52!important;padding-bottom:82px!im
 <section id="admin" class="page"><div class="head"><div><h2>Admin Control Center</h2><p class="muted">প্রতিষ্ঠান, ক্যাটাগরি ও অনুরোধ পরিচালনা</p></div><button class="btn alt" onclick="go('home')">User App</button></div><div class="panelgrid"><div class="panel stat">মোট প্রতিষ্ঠান<strong id="statTotal">0</strong></div><div class="panel stat">অপেক্ষমাণ<strong id="statPending">0</strong></div><div class="panel stat">অনুমোদিত<strong id="statApproved">0</strong></div><div class="panel stat">ক্যাটাগরি<strong>20</strong></div></div><div class="side" id="adminTabs"></div><div class="panel" id="adminPanel"></div></section>
 </main><nav class="hc-bottom-nav"><button class="active" onclick="go('home');setBottom(this)"><span>⌂</span>হোম</button><button onclick="go('search');setBottom(this)"><span>📍</span>ম্যাপ</button><button onclick="go('categories');setBottom(this)"><span>⊕</span>সেবা</button><button onclick="go('register');setBottom(this)"><span>✎</span>লিস্টিং</button><button onclick="go('profile');setBottom(this)"><span>♙</span>অ্যাকাউন্ট</button></nav><footer class="footer"><div class="footerin"><div><b>হাটহাজারী সিটি গাইড</b><div>আপনার শহর, আপনার হাতেই</div></div><div>© 2026 Hathazari City Guide · <a style="color:#fff" href="#" onclick="go('admin')">Admin</a></div></div></footer>
 
+<div class="modal" id="appInfoModal" onclick="if(event.target===this)closeModal('appInfoModal')"><div class="dialog"><div class="head"><h2>ℹ️ অ্যাপ সম্পর্কে</h2><button class="btn alt sm" onclick="closeModal('appInfoModal')">✕</button></div><p><b>হাটহাজারী সিটি গাইড</b></p><p class="muted">হাটহাজারীর হাসপাতাল, শিক্ষা প্রতিষ্ঠান, দর্শনীয় স্থান, পরিবহন, ব্যবসা ও জরুরি সেবার তথ্য এক জায়গায় খুঁজে পাওয়ার ডিজিটাল প্ল্যাটফর্ম।</p><p class="muted">আপনার এলাকার প্রয়োজনীয় তথ্য সহজে খুঁজুন এবং স্থানীয় প্রতিষ্ঠান সম্পর্কে জানুন।</p><div class="actions"><button class="btn" onclick="closeModal('appInfoModal')">ঠিক আছে</button></div></div></div>
+<div class="modal" id="developerInfoModal" onclick="if(event.target===this)closeModal('developerInfoModal')"><div class="dialog"><div class="head"><h2>👨‍💻 ডেভেলপার তথ্য</h2><button class="btn alt sm" onclick="closeModal('developerInfoModal')">✕</button></div><p><b>Developed by Medicloud Soft</b></p><p class="muted">হাটহাজারী সিটি গাইড — স্থানীয় সেবা ও তথ্যকে সহজলভ্য করার একটি ডিজিটাল উদ্যোগ।</p><p class="muted">Website: <a href="https://medicloudsoft.com" target="_blank" rel="noopener">medicloudsoft.com</a></p><div class="actions"><button class="btn" onclick="closeModal('developerInfoModal')">বন্ধ করুন</button></div></div></div>
 <div class="toast" id="toast"></div>
 <script>
 const CATS=[['📍','দর্শনীয় স্থান','Tourist Places'],['🏥','হাসপাতাল','Hospitals'],['🚌','পরিবহন','Transport'],['☎️','জরুরি সেবা','Emergency Services'],['🔥','ফায়ার সার্ভিস','Fire Service'],['🍴','রেস্টুরেন্ট','Restaurants'],['🏨','হোটেল','Hotels'],['🎓','শিক্ষা প্রতিষ্ঠান','Educational Institutions'],['📖','কলেজ','Colleges'],['🏛️','সরকারি অফিস','Government Offices'],['🛡️','থানা','Police Stations'],['⚖️','আইনজীবী','Lawyers'],['🦷','ডেন্টাল','Dental Clinics'],['🏋️','জিম','Gyms'],['🎙️','প্রেস ক্লাব','Press Clubs'],['💊','ফার্মেসি','Pharmacies'],['🏦','ব্যাংক','Banks'],['🚚','কুরিয়ার সার্ভিস','Courier Services'],['👨‍⚕️','ডাক্তার','Doctors'],['📰','স্থানীয় খবর','Local News']];
@@ -219,6 +230,12 @@ function save(){localStorage.setItem('hc_records',JSON.stringify(records))}
 function toast(s){let t=document.getElementById('toast');t.textContent=s;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
 function setBottom(el){document.querySelectorAll('.hc-bottom-nav button').forEach(b=>b.classList.remove('active'));el.classList.add('active')}function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id)?.classList.add('active');if(id==='favorites')renderFavorites();if(id==='notifications')renderNotifications();if(id==='admin')renderAdmin();if(id==='search')renderDirectory();if(id==='profile')loadProfile();window.scrollTo(0,0)}
 function openModal(id){document.getElementById(id).classList.add('show')}function closeModal(id){document.getElementById(id).classList.remove('show')}
+function toggleAppMenu(){const m=document.getElementById('hcAppMenu');m.classList.toggle('open')}
+function closeAppMenu(){document.getElementById('hcAppMenu')?.classList.remove('open')}
+function openAppInfo(){closeAppMenu();openModal('appInfoModal')}
+function openDeveloperInfo(){closeAppMenu();openModal('developerInfoModal')}
+async function shareApp(){closeAppMenu();const data={title:'হাটহাজারী সিটি গাইড',text:'হাটহাজারীর প্রয়োজনীয় সেবা ও স্থান খুঁজুন — Hathazari City Guide',url:location.href};try{if(navigator.share)await navigator.share(data);else if(navigator.clipboard){await navigator.clipboard.writeText(data.url);toast('অ্যাপের লিংক কপি হয়েছে');}else toast('এই ব্রাউজারে শেয়ার সুবিধা নেই');}catch(e){if(e.name!=='AbortError')toast('শেয়ার করা যায়নি');}}
+document.addEventListener('click',e=>{if(!e.target.closest('.hc-menu-wrap'))closeAppMenu()});
 function categoryCard(c){return '<button class="cat" onclick="openCategory(\''+esc(c[1])+'\')"><span class="emoji">'+c[0]+'</span><span><strong>'+c[1]+'</strong><small>'+c[2]+'</small></span></button>'}
 function renderCats(){const colors=['#e4f9eb','#ffe9e9','#e8efff','#ffe9e9','#fff0e5','#fff6df','#e7f7fb','#e9efff','#fff0e4','#e7f9eb','#ffe9ed','#f4eaff'];document.getElementById('homeCats').innerHTML=CATS.map((c,i)=>'<button class="hc-service" onclick=\'openCategory('+JSON.stringify(c[1])+')\'><span class="hc-service-icon" style="background:'+colors[i%colors.length]+'">'+c[0]+'</span><strong>'+c[1]+'</strong></button>').join('');document.getElementById('allCats').innerHTML=CATS.map(categoryCard).join('');let opts=CATS.map(c=>'<option>'+c[1]+'</option>').join('');document.getElementById('filterCategory').innerHTML='<option value="">সব ক্যাটাগরি</option>'+opts;document.getElementById('regCategory').innerHTML=opts}
 function placeCard(p){return '<article class="place"><span class="tag">'+esc(p.category)+'</span><h3>'+esc(p.name)+'</h3><p>📍 '+esc(p.address||'ঠিকানা যোগ করা হয়নি')+'</p><p>☎ '+esc(p.phone||'নম্বর দেওয়া হয়নি')+'</p><p>'+esc(p.description||'')+'</p><div class="actions"><button class="btn alt sm" onclick="toggleFav(\''+p.id+'\')">'+(favs.includes(p.id)?'♥ সংরক্ষিত':'♡ পছন্দ')+'</button><button class="btn line sm" onclick="details(\''+p.id+'\')">বিস্তারিত</button>'+(p.phone?'<a class="btn line sm" href="tel:'+esc(p.phone)+'">কল</a>':'')+'<a class="btn line sm" target="_blank" href="'+esc(p.map_url||('https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(p.name+' '+p.address)))+'">ম্যাপ</a></div></article>'}
@@ -242,3 +259,14 @@ function toggleLang(){lang=lang==='bn'?'en':'bn';document.getElementById('langBt
 function renderEmergency(){let a=[['জাতীয় জরুরি সেবা','999','Emergency'],['ফায়ার সার্ভিস','102','Fire Service'],['নারী ও শিশু সহায়তা','109','Women & Children']];document.getElementById('emergencyList').innerHTML=a.map(x=>'<article class="place"><span class="tag">জরুরি হটলাইন</span><h3>'+x[0]+'</h3><p>'+x[1]+'</p><a class="btn" href="tel:'+x[1]+'">এখনই কল করুন</a></article>').join('')}
 function loadProfile(){let p=JSON.parse(localStorage.getItem('hc_profile')||'{}');['name','phone','address'].forEach(k=>{let el=document.getElementById('profile'+k[0].toUpperCase()+k.slice(1));if(el)el.value=p[k]||''})}document.getElementById('profileForm').addEventListener('submit',e=>{e.preventDefault();let p=Object.fromEntries(new FormData(e.target));localStorage.setItem('hc_profile',JSON.stringify(p));document.getElementById('profileMsg').textContent='আপনার প্রোফাইল সংরক্ষণ হয়েছে।';toast('প্রোফাইল সংরক্ষণ হয়েছে')});renderCats();renderHome();renderDirectory();renderEmergency();loadProfile();if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}))}window.addEventListener('load',()=>setTimeout(()=>document.getElementById('splash')?.classList.add('hide'),1100));
 </script></body></html>
+<style>
+.hc-premium-actions{display:flex;align-items:center;gap:9px;margin-left:auto;position:relative;z-index:8}
+.hc-premium-actions>button,.hc-menu-wrap>button{width:42px;height:42px;border:1px solid #ffffff55;border-radius:14px;background:#ffffff20;color:#fff;font-size:21px;display:grid;place-items:center;position:relative}
+.hc-premium-actions>button i{position:absolute;right:-4px;top:-5px;min-width:17px;height:17px;border-radius:20px;background:#ff5252;color:white;font:700 10px Inter,sans-serif;display:grid;place-items:center;font-style:normal;border:1px solid white}
+.hc-menu-wrap{position:relative}
+.hc-app-menu{display:none;position:absolute;right:0;top:49px;width:210px;padding:7px;background:white;border:1px solid #e3eaf4;border-radius:15px;box-shadow:0 14px 35px #092b5a30;z-index:40}
+.hc-app-menu.open{display:block;animation:hcMenuIn .16s ease-out}
+.hc-app-menu button{display:flex;align-items:center;gap:11px;width:100%;padding:12px 10px;background:white;color:#18375e;border-radius:10px;text-align:left;font-size:14px}
+.hc-app-menu button:hover{background:#f0f5ff}
+@keyframes hcMenuIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+</style>
