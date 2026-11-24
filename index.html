@@ -55,6 +55,41 @@ body{margin:0;background:#f4f8f5;color:#14291c;padding-bottom:70px;font-family:'
 .hc-bottom-nav button.active{color:#079f39;font-weight:700}.hc-bottom-nav button.active span{outline:2px solid #08b43d;color:#08b43d}
 @media(min-width:600px){.hc-service-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media(max-width:380px){.hc-service-grid{gap:8px}.hc-service{min-height:88px}.hc-weather-meta{font-size:10px}.hc-green-head{padding-top:10px}}
+/* Final screenshot-matched mobile home layout */
+body{background:#f5f9f6!important;color:#111!important;padding-bottom:66px!important}
+.wrap{max-width:760px!important;padding:0 13px 24px!important}
+.hc-green-head{background:linear-gradient(115deg,#09b438 0%,#07932f 100%)!important;margin:0 -13px!important;padding:12px 13px 9px!important}
+.hc-top{padding:3px 3px 15px!important;min-height:47px}
+.hc-logo{width:39px!important;height:32px!important;border-radius:50%!important;background:transparent!important;border:0!important;color:#fff!important;font-size:23px!important}
+.hc-brand b{font:700 16px Inter,'Hind Siliguri',sans-serif!important;color:#fff!important}
+.hc-brand small{font-size:11px!important;color:#eaffef!important}
+.hc-top-actions button{width:34px!important;height:34px!important;border-radius:13px!important;background:#ffffff29!important;color:#fff!important}
+.hc-location{height:39px!important;margin:0!important;padding:0 14px!important;border-radius:12px!important;background:#fff!important;box-shadow:none!important}
+.hc-location select{font-size:13px!important}
+.hc-weather{margin:14px 0 0!important;border-radius:16px!important;background:linear-gradient(110deg,#08bd3d,#168539)!important;padding:14px 17px 13px!important;min-height:149px!important;box-shadow:none!important}
+.hc-weather-top small{font-size:13px!important}
+.hc-weather-top span{font-size:44px!important;opacity:.2!important}
+.hc-weather-main{gap:12px!important;margin:-1px 0 9px!important}
+.hc-cloud{font-size:39px!important}
+.hc-weather-main strong{font-size:34px!important}
+.hc-weather-main small{font-size:13px!important}
+.hc-weather-meta{font-size:11px!important}
+.hc-section-head{margin:17px 1px 11px!important}
+.hc-section-head h2{font-size:21px!important;color:#111!important}
+.hc-section-head button{display:none!important}
+.hc-service-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:10px!important}
+.hc-service{height:81px!important;min-height:81px!important;border:1px solid #dce9df!important;border-radius:12px!important;background:#fff!important;box-shadow:0 3px 10px #143c1b08!important;gap:5px!important;padding:7px 2px!important}
+.hc-service-icon{width:37px!important;height:37px!important;border-radius:12px!important;font-size:19px!important}
+.hc-service strong{font-size:11px!important;line-height:1.15!important;color:#17251c!important;font-weight:500!important}
+.hc-feature-head{margin-top:22px!important}
+.hc-bottom-nav{height:58px!important;padding:4px 5px 3px!important;background:#fff!important;border-top:1px solid #dce8df!important}
+.hc-bottom-nav button{font-size:10px!important;gap:0!important}
+.hc-bottom-nav button span{width:31px!important;height:31px!important;font-size:19px!important}
+.hc-bottom-nav button:nth-child(2) span{color:#d15b5b}
+.hc-bottom-nav button:nth-child(3) span{color:#7067ca}
+.hc-bottom-nav button:nth-child(4) span{color:#a36bea}
+.hc-bottom-nav button:nth-child(5) span{color:#55a9e9}
+@media(max-width:380px){.hc-service-grid{gap:9px!important}.hc-service{height:81px!important;min-height:81px!important}.hc-weather-meta{font-size:10px!important}}
 </style></head><body><div class="splash" id="splash"><div class="splash-inner"><div class="splash-logo">হ</div><h1>হাটহাজারী সিটি গাইড</h1><p>HATHAZARI CITY GUIDE</p><div class="loader"></div></div></div>
 <header class="top"><nav class="nav"><div class="brand" onclick="go('home')"><span class="logo">হ</span><span>হাটহাজারী সিটি গাইড<small style="display:block;font:10px Inter;color:#8090a8">HATHAZARI CITY GUIDE</small></span></div><div class="navlinks"><button onclick="go('home')">হোম</button><button onclick="go('categories')">ক্যাটাগরি</button><button onclick="go('search')">সার্চ</button><button onclick="go('favorites')">পছন্দের তালিকা</button><button onclick="go('notifications')">নোটিফিকেশন</button><button onclick="go('about')">আমাদের সম্পর্কে</button></div><button class="btn alt" onclick="toggleLang()" id="langBtn">English</button><button class="btn" onclick="go('favorites')">♡ পছন্দ</button><button class="btn" onclick="go('profile')">প্রোফাইল</button></nav></header>
 <main class="wrap">
@@ -62,8 +97,8 @@ body{margin:0;background:#f4f8f5;color:#14291c;padding-bottom:70px;font-family:'
 <div class="hc-green-head">
 <div class="hc-top"><div class="hc-brand"><span class="hc-logo">হ</span><span><b>হাটহাজারী সিটি</b><small>বাংলাদেশের ৪৯৫ উপজেলা</small></span></div><div class="hc-top-actions"><button onclick="go('notifications')" aria-label="নোটিফিকেশন">♧</button><button onclick="go('profile')" aria-label="মেনু">⋮</button></div></div>
 <div class="hc-location"><span>⌖</span><select aria-label="এলাকা নির্বাচন"><option>হাটহাজারী, চট্টগ্রাম</option><option>হাটহাজারী সদর</option><option>নাজিরহাট</option><option>ফতেপুর</option><option>মির্জাপুর</option></select><span>⌄</span></div>
-</div>
 <div class="hc-weather"><div class="hc-weather-top"><small>আবহাওয়া</small><span>☀</span></div><div class="hc-weather-main"><span class="hc-cloud">☁</span><div><strong>৩২°C</strong><small>আংশিক মেঘলা</small></div></div><div class="hc-weather-meta"><span>♨ আর্দ্রতা ৭৮%</span><span>≋ ১২ km/h</span><span>☀ UV ৩৬°</span></div></div>
+</div>
 <div class="hc-section-head"><h2>সেবা সমূহ</h2><button onclick="go('categories')">সব দেখুন ›</button></div><div class="hc-service-grid" id="homeCats"></div>
 <div class="hc-section-head hc-feature-head"><h2>জনপ্রিয় স্থান</h2><button onclick="go('search')">সব দেখুন ›</button></div><div class="cards" id="featuredPlaces"></div>
 <div class="hc-business-cta"><div><b>আপনার প্রতিষ্ঠান যুক্ত করুন</b><small>হাটহাজারীর মানুষের কাছে পৌঁছে যান</small></div><button onclick="go('register')">নিবন্ধন করুন</button></div>
