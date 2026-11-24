@@ -192,7 +192,20 @@ body{background:#f5f8ff!important;color:#142b52!important;padding-bottom:82px!im
    </div>
   </div>
  </div>
- <div class="hc-hill-art" aria-hidden="true"><span class="hc-sun"></span><span class="hc-hill hill-one"></span><span class="hc-hill hill-two"></span><span class="hc-river"></span></div>
+ <div class="hc-photo-banner" id="hcPhotoBanner" aria-label="হাটহাজারীর ছবি">
+  <div class="hc-photo-slides" id="hcPhotoSlides">
+   <img class="hc-photo-slide active" src="assets/hathazari-1.jpg" alt="হাটহাজারীর মসজিদ">
+   <img class="hc-photo-slide" src="assets/hathazari-2.jpg" alt="হাটহাজারী শহরের দৃশ্য">
+   <img class="hc-photo-slide" src="assets/hathazari-3.jpg" alt="হাটহাজারী শহরের aerial view">
+   <img class="hc-photo-slide" src="assets/hathazari-4.jpg" alt="হাটহাজারীর সবুজ রাস্তা">
+   <img class="hc-photo-slide" src="assets/hathazari-5.jpg" alt="হাটহাজারীর স্মৃতিসৌধ">
+   <img class="hc-photo-slide" src="assets/hathazari-6.jpg" alt="হাটহাজারী বিশ্ববিদ্যালয়ের প্রবেশপথ">
+   <img class="hc-photo-slide" src="assets/hathazari-7.jpg" alt="হাটহাজারীর হাসপাতাল">
+  </div>
+  <div class="hc-photo-shade"></div>
+  <div class="hc-photo-caption"><span>WELCOME TO</span><strong>HATHAZARI</strong><small>চট্টগ্রামের ঐতিহ্য, প্রকৃতি ও সম্ভাবনার জনপদ</small></div>
+  <div class="hc-photo-dots" id="hcPhotoDots"><button class="active" aria-label="ছবি ১"></button><button aria-label="ছবি ২"></button><button aria-label="ছবি ৩"></button><button aria-label="ছবি ৪"></button><button aria-label="ছবি ৫"></button><button aria-label="ছবি ৬"></button><button aria-label="ছবি ৭"></button></div>
+ </div>
  <div class="hc-location hc-premium-location"><span>📍</span><select aria-label="এলাকা নির্বাচন"><option>হাটহাজারী, চট্টগ্রাম</option><option>হাটহাজারী সদর</option><option>নাজিরহাট</option><option>ফতেপুর</option><option>মির্জাপুর</option></select><span>⌄</span></div>
 </div>
 <div class="hc-premium-weather">
@@ -258,6 +271,21 @@ function sendNotice(){let title=document.getElementById('noticeTitle').value.tri
 function toggleLang(){lang=lang==='bn'?'en':'bn';document.getElementById('langBtn').textContent=lang==='bn'?'English':'বাংলা';toast(lang==='en'?'English mode is being expanded.':'বাংলা মোড')}
 function renderEmergency(){let a=[['জাতীয় জরুরি সেবা','999','Emergency'],['ফায়ার সার্ভিস','102','Fire Service'],['নারী ও শিশু সহায়তা','109','Women & Children']];document.getElementById('emergencyList').innerHTML=a.map(x=>'<article class="place"><span class="tag">জরুরি হটলাইন</span><h3>'+x[0]+'</h3><p>'+x[1]+'</p><a class="btn" href="tel:'+x[1]+'">এখনই কল করুন</a></article>').join('')}
 function loadProfile(){let p=JSON.parse(localStorage.getItem('hc_profile')||'{}');['name','phone','address'].forEach(k=>{let el=document.getElementById('profile'+k[0].toUpperCase()+k.slice(1));if(el)el.value=p[k]||''})}document.getElementById('profileForm').addEventListener('submit',e=>{e.preventDefault();let p=Object.fromEntries(new FormData(e.target));localStorage.setItem('hc_profile',JSON.stringify(p));document.getElementById('profileMsg').textContent='আপনার প্রোফাইল সংরক্ষণ হয়েছে।';toast('প্রোফাইল সংরক্ষণ হয়েছে')});renderCats();renderHome();renderDirectory();renderEmergency();loadProfile();if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}))}window.addEventListener('load',()=>setTimeout(()=>document.getElementById('splash')?.classList.add('hide'),1100));
+
+// Hathazari photo banner carousel
+(function(){
+ const slides=[...document.querySelectorAll('.hc-photo-slide')];
+ const dots=[...document.querySelectorAll('#hcPhotoDots button')];
+ if(!slides.length)return;
+ let current=0,timer;
+ function showPhoto(n){current=(n+slides.length)%slides.length;slides.forEach((el,i)=>el.classList.toggle('active',i===current));dots.forEach((el,i)=>el.classList.toggle('active',i===current));}
+ function restart(){clearInterval(timer);timer=setInterval(()=>showPhoto(current+1),4200);}
+ dots.forEach((dot,i)=>dot.addEventListener('click',()=>{showPhoto(i);restart();}));
+ const banner=document.getElementById('hcPhotoBanner');
+ banner?.addEventListener('mouseenter',()=>clearInterval(timer));
+ banner?.addEventListener('mouseleave',restart);
+ showPhoto(0);restart();
+})();
 </script></body></html>
 <style>
 .hc-premium-actions{display:flex;align-items:center;gap:9px;margin-left:auto;position:relative;z-index:8}
@@ -269,4 +297,24 @@ function loadProfile(){let p=JSON.parse(localStorage.getItem('hc_profile')||'{}'
 .hc-app-menu button{display:flex;align-items:center;gap:11px;width:100%;padding:12px 10px;background:white;color:#18375e;border-radius:10px;text-align:left;font-size:14px}
 .hc-app-menu button:hover{background:#f0f5ff}
 @keyframes hcMenuIn{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+</style>
+<style>
+/* Hathazari photo banner slider */
+.hc-premium-hero{min-height:360px!important;padding-bottom:18px!important;background:#0c3266!important;position:relative!important;isolation:isolate!important}
+.hc-premium-hero:before{display:none!important}
+.hc-photo-banner{position:absolute;inset:0 0 0;z-index:0;overflow:hidden;border-radius:0 0 27px 27px;background:#0c3266}
+.hc-photo-slides,.hc-photo-shade{position:absolute;inset:0}
+.hc-photo-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.045);transition:opacity .9s ease,transform 5s ease;filter:saturate(1.08)}
+.hc-photo-slide.active{opacity:1;transform:scale(1)}
+.hc-photo-shade{background:linear-gradient(180deg,rgba(5,20,45,.48) 0%,rgba(5,20,45,.18) 38%,rgba(5,20,45,.72) 100%)}
+.hc-premium-hero>.hc-statusline,.hc-premium-hero>.hc-premium-brand,.hc-premium-hero>.hc-premium-location{position:relative;z-index:3}
+.hc-photo-caption{position:absolute;left:20px;right:20px;bottom:88px;z-index:2;color:#fff;text-shadow:0 2px 12px #001b3e}
+.hc-photo-caption span{display:block;font:700 10px Inter,sans-serif;letter-spacing:3px;color:#d9efff}
+.hc-photo-caption strong{display:block;font:800 clamp(28px,7vw,42px)/1.05 Inter,sans-serif;letter-spacing:1px}
+.hc-photo-caption small{display:block;margin-top:7px;font-size:12px;color:#fff}
+.hc-photo-dots{position:absolute;z-index:4;bottom:19px;left:20px;display:flex;gap:6px}
+.hc-photo-dots button{width:7px;height:7px;padding:0;border-radius:20px;background:#ffffff88;transition:all .25s}
+.hc-photo-dots button.active{width:23px;background:#fff}
+.hc-premium-location{margin-top:100px!important}
+@media(max-width:480px){.hc-premium-hero{min-height:350px!important}.hc-photo-caption{bottom:76px}.hc-premium-location{margin-top:90px!important}}
 </style>
