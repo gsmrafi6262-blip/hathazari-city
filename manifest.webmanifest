@@ -1,0 +1,12 @@
+{
+  "name": "হাটহাজারী সিটি গাইড",
+  "short_name": "Hathazari Guide",
+  "description": "হাটহাজারীর স্থানীয় প্রতিষ্ঠান ও জরুরি সেবা",
+  "lang": "bn",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fc",
+  "theme_color": "#155eef",
+  "icons": []
+}
