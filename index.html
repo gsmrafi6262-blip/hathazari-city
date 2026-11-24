@@ -293,3 +293,14 @@ function loadProfile(){let p=JSON.parse(localStorage.getItem('hc_profile')||'{}'
 .hc-photo-banner{height:500px!important;min-height:500px!important}
 @media(max-width:480px){.hc-premium-hero{height:500px!important;min-height:500px!important}.hc-photo-banner{height:500px!important}}
 </style>
+
+/* Fix visible three-dot menu and option popup */
+.hc-menu-wrap{position:relative!important;display:block!important;z-index:100!important}
+.hc-premium-actions{position:relative!important;z-index:100!important;align-items:center!important}
+.hc-premium-actions .hc-menu-wrap>button{width:42px!important;height:42px!important;display:grid!important;place-items:center!important;font-size:30px!important;font-weight:800!important;line-height:1!important;background:rgba(255,255,255,.24)!important;border:1.5px solid rgba(255,255,255,.65)!important;border-radius:14px!important;color:#fff!important;cursor:pointer!important;box-shadow:0 4px 12px rgba(0,30,80,.2)!important}
+.hc-app-menu{position:absolute!important;right:0!important;top:calc(100% + 9px)!important;width:210px!important;padding:8px!important;background:#fff!important;border:1px solid #e3eaf5!important;border-radius:16px!important;box-shadow:0 16px 38px rgba(8,35,83,.24)!important;display:none!important;z-index:9999!important}
+.hc-app-menu.open{display:flex!important;flex-direction:column!important;gap:4px!important}
+.hc-app-menu button{width:100%!important;display:flex!important;align-items:center!important;gap:10px!important;padding:12px 11px!important;border:0!important;border-radius:10px!important;background:#fff!important;color:#16365f!important;text-align:left!important;font-size:14px!important;cursor:pointer!important}
+.hc-app-menu button:hover{background:#eef5ff!important}
+.hc-app-menu button span{flex:1!important}
+@media(max-width:420px){.hc-app-menu{width:196px!important}}
